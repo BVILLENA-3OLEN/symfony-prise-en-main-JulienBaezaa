@@ -9,7 +9,9 @@ use App\Entity\Post;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Attribute\Route;
+
 
 #[Route(
     path: '/post/{id}/show',
@@ -20,6 +22,7 @@ use Symfony\Component\Routing\Attribute\Route;
 )]
 class PostShowGetController extends AbstractController
 {
+    
     public function __invoke(
         Post $post,
         ):Response

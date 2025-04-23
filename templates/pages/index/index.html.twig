@@ -29,6 +29,11 @@
             <header>
                 <h1>Articles</h1>
             </header>
+            <nav>
+                {% if can_create %}
+                    <a href="{{ path('app_post_create_get') }}" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Formulaire Création</a>
+                {% endif %}
+            </nav>
             <main>
                 <ul>
                     {% for published_post in published_posts%}

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Controller\Index;
 
    
+use App\Enum\Entity\RoleEnum;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -30,7 +31,10 @@ class IndexGetController extends AbstractController{
             parameters:[
                 'page_title' => 'Accueil',
                 'nom' => $nom,
-                'published_posts' => $allPosts
+                'published_posts' => $allPosts,
+                'can_create_post' => $this->isGranted(
+                    RoleEnum::ADMIN->value
+                )
             ],
         );
     }
