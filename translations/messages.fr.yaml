@@ -1,0 +1,3 @@
+app.index.title: "Mon application"
+
+app.hello.name.title: "Bonjour %name% !"
